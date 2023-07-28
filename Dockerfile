@@ -13,4 +13,6 @@ RUN pip install --default-timeout=900 -r requirements.txt --user
 
 EXPOSE ${API_PORT}
 
-CMD [ "python", "app.py" ]
+RUN chmod 777 app.sh
+
+CMD [ "./app.sh" ]
