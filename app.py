@@ -16,7 +16,7 @@ class CompletionPrediction(TypedDict, total=False):
 class LlamaAPI(FastAPI):
     def __init__(
         self, 
-        llama: LLama,
+        llama: Llama,
         max_gen_len: int,
         temperature: float,
         top_p: float,
@@ -54,7 +54,7 @@ def main(
 ):  
     print("Building llama...")
  
-    llama: LLama = Llama.build(
+    llama: Llama = Llama.build(
         ckpt_dir=ckpt_dir,
         tokenizer_path=tokenizer_path,
         max_seq_len=max_seq_len,
